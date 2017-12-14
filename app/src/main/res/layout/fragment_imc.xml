@@ -1,124 +1,202 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.logonrm.calculators.fragments.IMCFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Sexo"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+    tools:context="com.example.logonrm.calculators.fragments.IMCFragment"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/tvDesenvolvido"
-        android:layout_below="@+id/tvTitulo"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/side_nav_bar"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
 
-        <RadioGroup
+        <TextView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Sexo"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+            <RadioGroup
+                android:id="@+id/rg_sexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/rb_masculino"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Masculino"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:buttonTint="#fff"
+                    android:layout_weight="0.5"/>
+
+                <RadioButton
+                    android:id="@+id/rb_feminino"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Feminino"
+                    android:textColor="#fff"
+                    android:buttonTint="#fff"
+                    android:textSize="16sp"
+                    android:layout_weight="0.5"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
             >
 
-            <RadioButton
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/masculino"
-                android:text="Masculino" />
+                android:textSize="18sp"
+                android:text="Altura(m)"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/feminino"
-                android:text="Feminino"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Peso(m)"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
 
-        </RadioGroup>
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Altura (m)" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            >
 
-        <EditText
-            android:id="@+id/etTimeCasa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Digite a Altura" />
+            <EditText
+                android:id="@+id/et_altura"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:hint="Sua altura"
+                android:background="#fff"
+                android:textColorHint="#808080"
+                android:layout_weight="0.5"
+                android:paddingLeft="10dp"/>
 
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Peso (Km)" />
-
-        <EditText
-            android:id="@+id/etTimeVisitante"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Digite o peso" />
+            <EditText
+                android:id="@+id/et_peso"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:hint="Seu peso"
+                android:layout_marginRight="16dp"
+                android:textColorHint="#808080"
+                android:layout_weight="0.5"
+                android:background="#fff"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
 
         <Button
+            android:id="@+id/btn_calcular"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
             android:text="Calcular"
-            android:onClick="calcular"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Seu IMC é: "
-            android:layout_gravity="center"
-            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:background="#Eb8305"
             android:textSize="20sp"
-            android:layout_marginBottom="20dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:id="@+id/seu_imc"
+            android:textColor="#fff"
             />
-
-        <ImageView
-            android:layout_width="221dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center"
-            android:src="@drawable/boy"
-            android:layout_marginBottom="20dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Peso Ideal é: "
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:id="@+id/imc_ideal"
-            />
-
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
 
-</FrameLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_weight="0.5"
+            android:textSize="18sp"
+            android:text="Seu IMC é:"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/imc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingLeft="10dp"
+            android:gravity="left"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="18sp"
+            android:layout_weight="0.5"
+            android:text="Peso ideal:"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/peso_ideal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:gravity="left"
+            android:textSize="16sp"
+            android:layout_weight="0.5"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/boy"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
